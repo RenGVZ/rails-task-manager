@@ -1,0 +1,28 @@
+<h1> <%= @task.title %> </h1>
+<p> <%= @task.details %> </p>
+<p>
+</button>
+<div class="input-group">
+  <div class="input-group-prepend">
+    <div class="input-group-text">
+      <input type="checkbox" aria-label="Radio button for following text input" <%= @task.completed ? 'checked':'' %>>
+    </div>
+     Completed
+  </div>
+</div>
+</p>
+<div>
+  <button type="button" class="btn btn-outline-danger" style= "color:white">
+    <%= link_to "Edit", edit_task_path %>
+  </button>
+
+  <button type="button" class="btn btn-outline-info">
+    <%= link_to "Back to Tasks", tasks_path %>
+  </button>
+
+  <button type="button" class="btn btn-outline-success">
+    <%= link_to "Delete", task_path(@task),
+      method: :delete,
+      data: { confirm: "Are you sure?" } %>
+  </button>
+</div>
